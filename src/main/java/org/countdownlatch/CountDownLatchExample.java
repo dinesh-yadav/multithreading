@@ -6,6 +6,7 @@ public class CountDownLatchExample {
     public static void main(String[] args) throws InterruptedException {
         int numOfServices = 3;
         ExecutorService executorService = Executors.newFixedThreadPool(numOfServices);
+        //countDownLatch blocks the main thread
         CountDownLatch latch = new CountDownLatch(numOfServices);
         executorService.submit(new DependentService(latch));
         executorService.submit(new DependentService(latch));
