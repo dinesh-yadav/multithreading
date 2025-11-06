@@ -2,6 +2,10 @@ package org.referencedemos;
 
 import java.lang.ref.WeakReference;
 
+/**
+ * A WeakReference does not prevent GC.
+ * If the object is only reachable via weak references, it will be collected in the next GC cycle.
+ */
 public class WeakReferenceDemo {
     public static void main(String[] args) {
         // Create the strong reference
